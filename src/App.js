@@ -11,11 +11,11 @@ const App = () => {
 
   const fetchData = async () => {
     try {
-      const customersResponse = await axios.get('http://localhost:3001/customers');
-      const transactionsResponse = await axios.get('http://localhost:3001/transactions');
-      setCustomers(customersResponse.data);
-      setTransactions(transactionsResponse.data);
-      setFilteredTransactions(transactionsResponse.data);
+      const customersResponse = await axios.get('https://raw.githubusercontent.com/Ahmed-Walid2/customer-transactions/master/db.json');
+      const transactionsResponse = await axios.get('https://raw.githubusercontent.com/Ahmed-Walid2/customer-transactions/master/db.json');
+      setCustomers(customersResponse.data.customers);
+      setTransactions(transactionsResponse.data.transactions);
+      setFilteredTransactions(transactionsResponse.data.transactions);
     
     
     } catch (error) {
